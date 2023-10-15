@@ -3,8 +3,10 @@ import 'package:provider/provider.dart';
 import '../models/task.dart';
 import '../providers/task_provider.dart';
 import 'task_detail_screen.dart';
+//Marcell - lack of comments explaining the code
 
 class PendingTasksScreen extends StatelessWidget {
+  //Marcell - should be put into a different file and called from there
   void _showAddTaskSheet(BuildContext context) {
     final titleController = TextEditingController();
     final descriptionController = TextEditingController();
@@ -49,6 +51,8 @@ class PendingTasksScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10), // Added for spacing
                   ElevatedButton(
+                    //Marcell - DatePicker could be a different button for better UX and so the user can change the textfield in
+                    //case they wish without adding the task
                     onPressed: () async {
                       final selectedDate = await showDatePicker(
                         context: context,
@@ -113,6 +117,7 @@ class PendingTasksScreen extends StatelessWidget {
               : ListView.builder(
                   itemCount: taskData.tasks.length,
                   itemBuilder: (context, index) {
+                    //Could be a different class as it almost the same as the pending class Card excpet for the icon
                     return Card(
                       margin: const EdgeInsets.symmetric(
                           vertical: 8, horizontal: 16),

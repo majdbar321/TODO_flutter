@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../main.dart';
 import '../models/task.dart';
 import '../providers/task_provider.dart';
+//Marcell - lack of comments explaining the code
 
 class EditTaskScreen extends StatelessWidget {
   final Task task;
