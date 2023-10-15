@@ -4,6 +4,9 @@ import 'providers/task_provider.dart';
 import 'screens/pending_tasks_screen.dart';
 import 'screens/completed_tasks_screen.dart';
 
+//Marcell - Lack of comments explaining the code
+
+//Marcell - Could be put into a different file so the main function doesn't clutter the apps code
 void main() {
   runApp(
     ChangeNotifierProvider(
@@ -13,6 +16,7 @@ void main() {
   );
 }
 
+//Marcell - the app doesn't take into consideration how big the screen is and therefore only uses BottomNavBar
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,6 +34,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
+  //Marcell - good idea using a list so it can be easily scaled with different pages without changin much of the code
   final List<Widget> _screens = [PendingTasksScreen(), CompletedTasksScreen()];
 
   @override
@@ -37,6 +42,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        //Marcell - 'const' could be used because the icons will never be changed while the program is runing
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.pending_actions), label: 'Pending'),
